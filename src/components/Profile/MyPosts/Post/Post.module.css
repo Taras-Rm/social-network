@@ -1,0 +1,36 @@
+
+.item {
+  font-size: 20px;
+  
+  border: 2px solid #EFEFEF;
+  border-radius: 8px;
+
+  margin: 0 0 20px 0;
+  padding: 20px 0 10px 50px;
+}
+
+.item img {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 10px;
+}
+
+.post_text {
+  padding: 0 0 0 20px;
+}
+
+.img_text {
+  display: flex;
+  align-items: center;
+}
+
+.about_like .like {
+  width: 20px;
+  height: 20px;
+  padding-right: 5px;
+}
+
+.about_like {
+  text-align: center;
+}

@@ -1,0 +1,25 @@
+.app-wrapper {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 3fr 11fr;
+
+  grid-template-areas: 
+  "h h"
+  "n c";
+
+  width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0 10px 0;
+}
+
+.app-wrapper-content {
+  grid-area: c;
+}
+
+p {
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}

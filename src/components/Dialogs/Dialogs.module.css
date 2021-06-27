@@ -1,0 +1,45 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 4fr 10fr;
+}
+
+.dialogs .dialogs_items {
+  padding: 0 10px;
+}
+
+.messages {
+  padding: 0 0 0 40px;
+
+  position: relative;
+}
+
+.new_message {
+  display: flex;
+  width: 100%;
+  margin: 100px 0 0 0;
+}
+
+.new_message textarea {
+  width: 100%;
+  background-color: white;
+
+  padding: 0;
+
+  border: 1px solid #e2e9e6;
+}
+
+.btn_green {
+  color: white;
+  background-color: #26a69a;
+
+  border: none;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+  width: 120px;
+
+  font-size: 16px;
+  padding: 3px 5px 0 5px;
+  text-align: center;
+
+  text-decoration: none;
+}

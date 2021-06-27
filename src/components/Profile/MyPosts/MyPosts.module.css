@@ -1,0 +1,43 @@
+.posts h2 {
+  font-size: 30px;
+  font-weight: normal;
+  padding: 20px 0 20px 20px;
+  margin: 0;
+}
+
+.new_post textarea {
+  width: 100%;
+  background-color: white;
+  
+  padding: 0;
+  margin: 0 10px 0 0;
+
+  border: 1px solid black;
+}
+
+.new_post {
+  display: flex;
+  margin: 0 20px 0 20px;
+}
+
+.btn_green {
+  color:white;
+  background-color: #26A69A;
+
+  border: none;
+  width: 120px;
+
+  font-size: 16px;
+  padding: 3px 0 0 0;
+  text-align: center;
+
+  text-decoration: none;
+}
+
+.old_posts {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 0 0;
+
+  padding: 0 20px;
+}

@@ -1,0 +1,16 @@
+.avatar img {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 5px;
+}
+
+.friend_item a {
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+}
+
+.friend_item {
+    text-align: center;
+}

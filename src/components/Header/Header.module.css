@@ -1,0 +1,25 @@
+.header {
+    grid-area: h;
+    background-color: #26A69A;
+
+    border-bottom: 10px solid white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+.header img {
+    width: 80px;
+    float: left;
+}
+
+.login {
+  color: #fff;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.login:hover {
+  text-decoration: underline;
+}
