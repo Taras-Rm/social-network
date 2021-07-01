@@ -4,7 +4,7 @@ import Profile from './Profile';
 import {
     addPost,
     getUserProfileInfo,
-    getUserStatus,
+    getUserStatus, updateUserPhoto,
     updateUserStatus,
 } from '../../redux/profile-reducer';
 import {withRouter} from 'react-router';
@@ -12,7 +12,7 @@ import {compose} from 'redux';
 
 class ProfileContainerAPI extends React.Component {
 
-    componentDidMount() {
+    refreshProfile() {
         let userId = this.props.match.params.userID;
         if (!userId) {
             userId = this.props.id;
@@ -27,9 +27,19 @@ class ProfileContainerAPI extends React.Component {
         this.props.getUserStatus(userId);
     }
 
+    componentDidMount() {
+        this.refreshProfile();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps.match.params.userID !== this.props.match.params.userID) {
+           this.refreshProfile();
+        }
+    }
+
     render() {
         return (
-            <Profile {...this.props} />
+            <Profile {...this.props} isOwner={!this.props.match.params.userID} />
         );
     }
 }
@@ -39,11 +49,12 @@ let mapStateToProps = (state) => {
         posts: state.profilePage.posts,
         activeProfile: state.profilePage.activeProfile,
         status: state.profilePage.status,
-        id: state.auth.id,
+        id: state.auth.id
     };
 };
 
 export default compose(
-    connect(mapStateToProps, {addPost, getUserProfileInfo, getUserStatus, updateUserStatus}),
+    connect(mapStateToProps, {addPost, getUserProfileInfo, getUserStatus, updateUserStatus, updateUserPhoto
+        }),
     withRouter,
 )(ProfileContainerAPI);

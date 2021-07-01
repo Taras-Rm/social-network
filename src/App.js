@@ -1,6 +1,6 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import './App.css';
-import {HashRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 
 
@@ -58,11 +58,11 @@ const AppWithConnect = connect(mapStateToProps, {initialize})(App);
 
 const MainApp = (props) => {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Provider store={store}>
                 <AppWithConnect/>
             </Provider>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 

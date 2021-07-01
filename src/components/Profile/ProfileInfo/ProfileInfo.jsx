@@ -3,9 +3,15 @@ import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 
-const ProfileInfo = ({activeProfile, status, updateUserStatus}) => {
+const ProfileInfo = ({activeProfile, status, updateUserStatus, isOwner, updateUserPhoto}) => {
     if(!activeProfile) {
         return <Preloader />
+    }
+
+    const updatePhoto = (e) => {
+        if(e.target.files.length) {
+            updateUserPhoto(e.target.files[0]);
+        }
     }
 
     return (
@@ -14,7 +20,10 @@ const ProfileInfo = ({activeProfile, status, updateUserStatus}) => {
                 <img className={s.walpaper} src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHnHamnGAQO6byapKIZIp-6TZNYZksh2x3MQ&usqp=CAU" alt="phon-nature"></img>
             </div>
             <div className={s.profile_description}>
-                <img className={s.avatar} src={activeProfile.photos.small} alt="ava"></img>
+                <div className={s.avatarBox}>
+                    <img className={s.avatar} src={activeProfile.photos.small} alt="ava"></img>
+                    {isOwner && <input className={s.avatar_upload} type="file" onChange={updatePhoto}/>}
+                </div>
                 <div className={s.profile_info}>
                     <span>{!activeProfile ? 'Tom K.' : activeProfile.fullName}</span>
                     <p>Date of Birth: 2 january<br />City:Minsk<br />Education: 11<br />Web-site: fhdsjfhdjfh</p>

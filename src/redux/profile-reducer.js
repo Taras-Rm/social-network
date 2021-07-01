@@ -4,6 +4,7 @@ const ADD_POST = 'profile/ADD-POST';
 const DELETE_POST = 'profile/DELETE-POST';
 const SET_USER_PROFILE = 'profile/SET_USER_PROFILE';
 const SET_USER_STATUS = 'profile/GET_USER_STATUS';
+const SET_USER_PHOTO = 'profile/SET_USER_PHOTO';
 
 let initialState = {
     posts: [
@@ -52,6 +53,12 @@ const profileReducer = (state = initialState, action) => {
                 status: action.status,
             };
         }
+        case SET_USER_PHOTO: {
+            return {
+                ...state,
+                activeProfile: {...state.activeProfile, photos: action.photos},
+            };
+        }
         default:
             return state;
     }
@@ -71,6 +78,10 @@ export const setUserProfile = (userProfile) => {
 
 export const setUserStatus = (status) => {
     return {type: SET_USER_STATUS, status};
+};
+
+export const setUserPhoto = (photos) => {
+    return {type: SET_USER_PHOTO, photos};
 };
 
 //////////////////////////////////////////////////////
@@ -93,6 +104,14 @@ export const updateUserStatus = (status) => async (dispatch) => {
     let response = await profileAPI.updateUserStatus(status);
     if (response === 0) {
         dispatch(setUserStatus(status));
+    }
+};
+
+// оновити фото користувача (авторизованого)
+export const updateUserPhoto = (file) => async (dispatch) => {
+    let response = await profileAPI.setUserPhoto(file);
+    if (response.resultCode === 0) {
+        dispatch(setUserPhoto(response.data.photos));
     }
 };
 

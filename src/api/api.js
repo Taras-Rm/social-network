@@ -59,6 +59,18 @@ export const profileAPI = {
         return response.data;
       });
   },
+
+  // оновити фото користувача
+  setUserPhoto(photoFile) {
+    let data = new FormData();
+    data.append('image', photoFile);
+
+    return instance
+        .put(`profile/photo`, data)
+        .then((response) => {
+          return response.data;
+        });
+  },
 };
 
 export const authAPI = {
