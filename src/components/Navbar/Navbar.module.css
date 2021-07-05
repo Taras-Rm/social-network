@@ -1,27 +1,40 @@
 .nav {
     grid-area: n;
-    background-color: #212121;
+    background-color: #e9ebee;
 
-    font-size: 30px;
-    padding: 10px;
-    
-    border: 10px solid white;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 15px 15px 0 35px;
+
+    border-right: 2px solid #dfe0e4;
     border-left: 0;
     border-bottom: 0;
     border-top: 0;
 }
 
-.item a {
-    color: #676767;
+
+
+.nav a {
+    display: block;
+    color: #bfbfbf;
     text-decoration: none;
+    padding: 8px 10px 8px 10px;
+    cursor: pointer;
 }
 
-.item a:hover {
-    color: #FFFFFF;
+.nav a:hover {
+    background-color: #dee0e3;
+    border-left: 3px solid #3d63b0;
+    color: #18273d;
+    padding-left: 7px;
 }
 
-.item a.activeLink {
-    color: #FFFFFF;
+.nav a.activeLink {
+    color: #18273d;
+    background-color: #dee0e3;
+    border-left: 3px solid #3d63b0;
+    padding-left: 7px;
 }
 
 .item.settings {

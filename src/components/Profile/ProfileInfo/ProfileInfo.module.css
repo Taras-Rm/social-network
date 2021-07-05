@@ -1,7 +1,11 @@
+.profile_block {
+  border-right: 2px solid #dfe0e4;
+}
+
 .walpaper {
     display: inline-block;
     width: 100%;
-    height: 150px;
+    height: 200px;
   }
   
   .profile_description {
@@ -15,12 +19,13 @@
   }
 
   .avatar {
+    display: block;
     height: 150px;
     width: 150px;
 
     margin-bottom: 10px;
 
-    border: 2px solid #E2E9E6;
+    border: 4px solid #ffffff;
   }
   
   .profile_info {

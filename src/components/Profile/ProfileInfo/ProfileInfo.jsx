@@ -26,7 +26,7 @@ const ProfileInfo = ({activeProfile, status, updateUserStatus, isOwner, updateUs
                 </div>
                 <div className={s.profile_info}>
                     <span>{!activeProfile ? 'Tom K.' : activeProfile.fullName}</span>
-                    <p>Date of Birth: 2 january<br />City:Minsk<br />Education: 11<br />Web-site: fhdsjfhdjfh</p>
+                    <div>Profile data</div>
                 </div>
                 <ProfileStatusWithHooks status={status} updateUserStatus={updateUserStatus}/>
             </div>

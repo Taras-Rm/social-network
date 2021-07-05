@@ -1,15 +1,32 @@
-
 .item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
   font-size: 20px;
   
   border: 2px solid #EFEFEF;
   border-radius: 8px;
 
   margin: 0 0 20px 0;
-  padding: 20px 0 10px 50px;
+  padding: 20px 40px;
 }
 
-.item img {
+.item_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+  width: 100%;
+}
+
+.item_text {
+  display: flex;
+  align-items: center;
+}
+
+.item .avatar {
   width: 60px;
   height: 60px;
 
@@ -20,9 +37,19 @@
   padding: 0 0 0 20px;
 }
 
-.img_text {
-  display: flex;
-  align-items: center;
+.item_delete {
+  display: inline-block;
+  width: 25px;
+  cursor: pointer;
+  transition: .5s all;
+}
+
+.item_delete:hover {
+  transform: scale(1.25);
+}
+
+.about_like {
+  /*float: left;*/
 }
 
 .about_like .like {

@@ -7,8 +7,8 @@ import {Textarea} from './../../common/FormsControls/FormsControls';
 
 const MyPosts = React.memo(props => {
     let postsElements = props.posts.map((post) => (
-        <Post message={post.message} likeCount={post.likeCount}/>
-    ));
+        <Post deletePost={props.deletePost} message={post.message} likeCount={post.likeCount} id={post.id}/>
+    )).reverse();
 
     let addPost = (values) => {
         props.addPost(values.postText);
@@ -19,9 +19,11 @@ const MyPosts = React.memo(props => {
         <div className={s.posts}>
             <h2 className={s.header_posts}>My posts</h2>
 
-            <ReduxAddPostForm onSubmit={addPost}/>
+            <div className={s.postsBlock}>
+                <ReduxAddPostForm onSubmit={addPost}/>
+                <div className={s.old_posts}>{postsElements}</div>
+            </div>
 
-            <div className={s.old_posts}>{postsElements}</div>
         </div>)
 
 
@@ -36,11 +38,12 @@ const AddPostForm = (props) => {
                 type="text"
                 name={'postText'}
                 validate={[requiredField, maxLength30]}
-                placeholder="     your news ..."
+                placeholder="Write new post in this field..."
                 component={Textarea}
+                className={s.textarea}
             />
 
-            <button className={s.btn_green}>Send</button>
+            <button className={s.btn_green}>Add post</button>
         </form>
     );
 };

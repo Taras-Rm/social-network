@@ -1,3 +1,7 @@
+.formControll {
+  width: 100%;
+}
+
 .formControll.error input,
 .formControll.error textarea {
   border: 2px solid red;

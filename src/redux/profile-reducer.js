@@ -13,8 +13,8 @@ let initialState = {
         {id: 3, message: 'I am happy!!!', likeCount: 18},
         {id: 4, message: 'I like travelling!!!', likeCount: 35},
         {id: 5, message: 'I like travelling!!!!!!!!!!!!!!!!!', likeCount: 30},
-        {id: 5, message: 'I like travelling!!!!!!!!!!!!!!!!!', likeCount: 31},
-        {id: 10, message: 'I likkkk kkkkkkk', likeCount: 1},
+        {id: 6, message: 'I like travelling!!!!!!!!!!!!!!!!!', likeCount: 31},
+        {id: 7, message: 'I likkkk kkkkkkk', likeCount: 1},
     ],
 
     activeProfile: null,
@@ -25,7 +25,7 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
             let newPost = {
-                id: 5,
+                id: Math.ceil(Math.random() * 10000),
                 message: action.postText,
                 likeCount: 0,
             };

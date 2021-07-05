@@ -1,3 +1,13 @@
+.postsBlock {
+
+}
+
+.posts {
+  padding: 10px 0;
+  margin: 0 0 0 10px;
+  background-color: #f6f7f9;
+}
+
 .posts h2 {
   font-size: 30px;
   font-weight: normal;
@@ -5,19 +15,23 @@
   margin: 0;
 }
 
-.new_post textarea {
-  width: 100%;
-  background-color: white;
-  
-  padding: 0;
-  margin: 0 10px 0 0;
-
-  border: 1px solid black;
-}
-
 .new_post {
   display: flex;
+  justify-content: space-between;
+  border: 2px solid #EFEFEF;
+  border-radius: 8px;
+
+  background-color: #ffffff;
   margin: 0 20px 0 20px;
+  padding: 5px;
+}
+
+.textarea{
+  display: inline-block;
+  height: 100px;
+  width: 70%;
+  padding: 5px;
+  resize: none;
 }
 
 .btn_green {
@@ -25,13 +39,22 @@
   background-color: #26A69A;
 
   border: none;
-  width: 120px;
+  width: 160px;
+  height: fit-content;
 
   font-size: 16px;
-  padding: 3px 0 0 0;
+  padding: 12px 0;
   text-align: center;
 
   text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: .5s all;
+}
+
+.btn_green:hover {
+  background-color: #1c6c64;
+
 }
 
 .old_posts {
