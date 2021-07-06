@@ -71,6 +71,15 @@ export const profileAPI = {
           return response.data;
         });
   },
+
+  // встановити / оновити дані користувача
+  setUserData(userData) {
+    return instance
+        .put(`profile`, userData)
+        .then((response) => {
+          return response.data;
+        });
+  },
 };
 
 export const authAPI = {

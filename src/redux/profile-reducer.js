@@ -1,4 +1,5 @@
 import {dataAPI, profileAPI} from './../api/api';
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = 'profile/ADD-POST';
 const DELETE_POST = 'profile/DELETE-POST';
@@ -114,5 +115,18 @@ export const updateUserPhoto = (file) => async (dispatch) => {
         dispatch(setUserPhoto(response.data.photos));
     }
 };
+
+// оновити / встановити дані користувача
+export const updateUserData = (userData) => async (dispatch, getState) => {
+    const userId = getState().auth.id;
+    let response = await profileAPI.setUserData(userData);
+    if(response.resultCode === 0) {
+        dispatch(getUserProfileInfo(userId));
+    } else {
+        let errorText = response.messages[0];
+        dispatch(stopSubmit("profileData", {_error: errorText}))
+        return Promise.reject(response.messages[0])
+    }
+}
 
 export default profileReducer;

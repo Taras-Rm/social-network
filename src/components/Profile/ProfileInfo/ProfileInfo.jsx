@@ -2,11 +2,13 @@ import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
+import ProfileData from "./ProfileData/ProfileData";
 
-const ProfileInfo = ({activeProfile, status, updateUserStatus, isOwner, updateUserPhoto}) => {
+const ProfileInfo = ({activeProfile, status, updateUserStatus, isOwner, updateUserPhoto, updateUserData}) => {
     if(!activeProfile) {
         return <Preloader />
     }
+
 
     const updatePhoto = (e) => {
         if(e.target.files.length) {
@@ -26,7 +28,9 @@ const ProfileInfo = ({activeProfile, status, updateUserStatus, isOwner, updateUs
                 </div>
                 <div className={s.profile_info}>
                     <span>{!activeProfile ? 'Tom K.' : activeProfile.fullName}</span>
-                    <div>Profile data</div>
+                    <div>
+                        <ProfileData isOwner={isOwner} activeProfile={activeProfile} updateUserData={updateUserData}/>
+                    </div>
                 </div>
                 <ProfileStatusWithHooks status={status} updateUserStatus={updateUserStatus}/>
             </div>
